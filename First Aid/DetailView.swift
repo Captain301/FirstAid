@@ -11,28 +11,27 @@ import SwiftUI
 struct DetailView: View {
     let accident:Accident
     var body: some View {
-        HStack (alignment: .top){
-        VStack(alignment: .center, spacing: 10) {
+        VStack{
+            VStack{
                 Image(accident.imageName)
                     .resizable()
-                    .renderingMode(.original)
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 300, height: 170)
-                    .clipped()
-                    .cornerRadius(10)
-                    .shadow(radius: 10)
-                VStack(alignment: .leading, spacing: 5) {
-                    Text(accident.title)
+                    .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.red, lineWidth: 4))
+                        .frame(width: 120, height: 120)
+                Text(accident.title)
                         .foregroundColor(.primary)
                         .font(.headline)
-                    Text(accident.description)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                        .multilineTextAlignment(.leading)
+                    Text("\(accident.description)")
                         .lineLimit(6)
                         .frame(height: 70)
-                }
-            }
+            }.padding(.bottom, 20)
+                    Image("\(accident.descImage[0])")
+                    Text("\(accident.desc[0])")
+                    Image("\(accident.descImage[1])")
+                    Text("\(accident.desc[1])")
+                    Image("\(accident.descImage[2])")
+                    Text("\(accident.desc[2])")
+                    
         }
     }
 }
