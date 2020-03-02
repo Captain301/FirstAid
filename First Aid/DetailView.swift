@@ -27,11 +27,16 @@ struct DetailView: View {
             }.padding(.bottom, 20)
                     Image("\(accident.descImage[0])")
                     Text("\(accident.desc[0])")
+                        .lineLimit(6)
+                        .frame(height: 70)
                     Image("\(accident.descImage[1])")
                     Text("\(accident.desc[1])")
+                        .lineLimit(6)
+                        .frame(height: 70)
                     Image("\(accident.descImage[2])")
                     Text("\(accident.desc[2])")
-                    
+                        .lineLimit(6)
+                        .frame(height: 70)
         }
     }
 }
