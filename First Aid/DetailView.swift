@@ -11,6 +11,7 @@ import SwiftUI
 struct DetailView: View {
     let accident:Accident
     var body: some View {
+        List{
         VStack{
             VStack{
                 Image(accident.imageName)
@@ -23,21 +24,26 @@ struct DetailView: View {
                         .font(.headline)
                     Text("\(accident.description)")
                         .lineLimit(6)
-                        .frame(height: 70)
+                        .frame(height: 90)
             }.padding(.bottom, 20)
+            VStack{
                     Image("\(accident.descImage[0])")
                     Text("\(accident.desc[0])")
-                        .lineLimit(6)
-                        .frame(height: 70)
                     Image("\(accident.descImage[1])")
                     Text("\(accident.desc[1])")
-                        .lineLimit(6)
-                        .frame(height: 70)
                     Image("\(accident.descImage[2])")
                     Text("\(accident.desc[2])")
-                        .lineLimit(6)
-                        .frame(height: 70)
+            if accident.descImage.count > 3{
+                Image("\(accident.descImage[3])")
+                Text("\(accident.desc[3])")
+                Image("\(accident.descImage[4])")
+                Text("\(accident.desc[4])")
+                Image("\(accident.descImage[5])")
+                Text("\(accident.desc[5])")
+            }
+            }
         }
+    }
     }
 }
 
